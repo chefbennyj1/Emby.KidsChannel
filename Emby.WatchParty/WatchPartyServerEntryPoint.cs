@@ -35,7 +35,7 @@ namespace Emby.WatchParty
 
         public void Run()
         {
-            Plugin.Instance.UpdateConfiguration(Plugin.Instance.Configuration);
+            //Plugin.Instance.UpdateConfiguration(Plugin.Instance.Configuration);
            
             //var watchPartyLibrary = LibraryManager.GetVirtualFolders(true).FirstOrDefault(f => f.Name == "Watch Party");
 

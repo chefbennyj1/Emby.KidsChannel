@@ -24,6 +24,32 @@ namespace Emby.WatchParty
         {
             LibraryManager = libraryManager;
         }
+        public string DataVersion => "2";
+
+        public bool IsEnabledFor(string userId)
+        {
+            return true;
+        }
+        
+        public InternalChannelFeatures GetChannelFeatures()
+        {
+            return new InternalChannelFeatures
+            {
+                ContentTypes = new List<ChannelMediaContentType>
+                {
+                    ChannelMediaContentType.Movie
+                },
+
+                MediaTypes = new List<ChannelMediaType>
+                {
+                    ChannelMediaType.Video
+                },
+
+                SupportsContentDownloading = true,
+                SupportsSortOrderToggle    = true,
+            };
+        }
+
         public async Task<ChannelItemResult> GetChannelItems(InternalChannelItemQuery query, CancellationToken cancellationToken)
         {
             var config = Plugin.Instance.Configuration;
@@ -37,6 +63,7 @@ namespace Emby.WatchParty
                 new ChannelItemInfo()
                 {
                     Name          = item.Name,
+                    Id            = $"watchParty_{item.InternalId}",
                     ImageUrl      = item.PrimaryImagePath,
                     Type          = ChannelItemType.Media,
                     ContentType   = GetChannelMediaContentType(item.GetType().Name),
@@ -71,7 +98,7 @@ namespace Emby.WatchParty
 
         public IEnumerable<ImageType> GetSupportedChannelImages()
         {
-            return new List<ImageType>() { ImageType.Thumb };
+            return new List<ImageType>() { ImageType.Thumb, ImageType.Primary };
         }
 
         public string Name => Plugin.Instance.Name;

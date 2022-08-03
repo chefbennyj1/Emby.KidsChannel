@@ -10,7 +10,7 @@ define(['globalize', 'loading', 'paper-icon-button-light', 'formDialogStyle', 'e
         ApiClient.createWatchParty = function (id) {
             const url = this.getUrl("CreateWatchParty");
             const options = {
-                Id: id
+                InternalId: id
             };
             return this.ajax({
                 type: "POST",
