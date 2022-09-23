@@ -6,7 +6,7 @@ using MediaBrowser.Model.Dto;
 using MediaBrowser.Model.Entities;
 using MediaBrowser.Model.MediaInfo;
 
-namespace Emby.WatchParty
+namespace Emby.KidsChannel
 {
     public class ChannelMediaInfo
     {

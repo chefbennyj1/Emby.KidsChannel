@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Emby.WatchParty.Configuration;
+using Emby.KidsChannel.Configuration;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Plugins;
 using MediaBrowser.Model.Drawing;
 using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
 
-namespace Emby.WatchParty
+namespace Emby.KidsChannel
 {
-    public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages, IHasThumbImage
+    public class Plugin : BasePlugin<PluginConfiguration>, IHasThumbImage
     {
         public static Plugin Instance { get; set; }
         public Plugin(IApplicationPaths applicationPaths, IXmlSerializer xmlSerializer) : base(applicationPaths,
@@ -19,10 +19,10 @@ namespace Emby.WatchParty
             Instance = this;
         }
 
-        public override string Name => "Watch Party";
-        public override string Description => "Sync media streams across multiple users to watch library items together.";
+        public override string Name => "Kids Movies";
+        public override string Description => "Spotlight movie items for kids in the library.";
 
-        public override Guid Id =>  new Guid("672630FC-6FB8-4207-9C7B-AB414CD85B53");
+        public override Guid Id =>  new Guid("00C58D53-32F4-4F70-A225-510E714539A8");
         
         public Stream GetThumbImage()
         {
@@ -32,22 +32,6 @@ namespace Emby.WatchParty
 
         public ImageFormat ThumbImageFormat => ImageFormat.Jpg;
 
-        public IEnumerable<PluginPageInfo> GetPages()
-        {
-            return new[]
-            {
-                new PluginPageInfo
-                {
-                    Name = "WatchPartyConfigurationPage",
-                    EmbeddedResourcePath = GetType().Namespace + ".Configuration.WatchPartyConfigurationPage.html",
-                    EnableInMainMenu = true
-                },
-                new PluginPageInfo
-                {
-                    Name = "WatchPartyConfigurationPageJS",
-                    EmbeddedResourcePath = GetType().Namespace + ".Configuration.WatchPartyConfigurationPage.js"
-                }
-            };
-        }
+       
     }
 }

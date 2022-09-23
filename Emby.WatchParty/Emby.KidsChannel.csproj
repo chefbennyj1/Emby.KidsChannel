@@ -4,21 +4,17 @@
 
     <TargetFrameworks>netstandard2.0;</TargetFrameworks>
 
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.0.3</AssemblyVersion>
 
-    <FileVersion>1.0.0.0</FileVersion>
+    <FileVersion>1.0.0.3</FileVersion>
     
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Configuration\WatchPartyConfigurationPage.html" />
-    <None Remove="Configuration\WatchPartyConfigurationPage.js" />
     <None Remove="thumb.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Configuration\WatchPartyConfigurationPage.html" />
-    <EmbeddedResource Include="Configuration\WatchPartyConfigurationPage.js" />
     <EmbeddedResource Include="images\thumb.jpg" />
   </ItemGroup>
 
