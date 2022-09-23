@@ -27,7 +27,7 @@ namespace Emby.KidsChannel
         public Stream GetThumbImage()
         {
             var type = GetType();
-            return type.Assembly.GetManifestResourceStream(type.Namespace + ".images.thumb.jpg");
+            return type.Assembly.GetManifestResourceStream(type.Namespace + ".images.thumb.png");
         }
 
         public ImageFormat ThumbImageFormat => ImageFormat.Jpg;

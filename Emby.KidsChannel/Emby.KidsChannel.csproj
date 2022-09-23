@@ -11,11 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\thumb.png" />
     <None Remove="thumb.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="images\thumb.jpg" />
+    <EmbeddedResource Include="images\thumb.png" />
   </ItemGroup>
 
   <ItemGroup>
